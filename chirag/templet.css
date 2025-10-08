@@ -1,0 +1,314 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe4e1 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23ff6b6b" width="1200" height="400"/><path fill="%23ffffff" opacity="0.1" d="M0,200 Q300,100 600,200 T1200,200 V400 H0 Z"/><circle fill="%23ffffff" opacity="0.1" cx="200" cy="100" r="40"/><circle fill="%23ffffff" opacity="0.1" cx="900" cy="80" r="25"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 1px solid #ffebee;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .temple-1 { background: linear-gradient(45deg, #ff6b6b, #ff8a80); }
+        .temple-2 { background: linear-gradient(45deg, #ff7043, #ff5722); }
+        .temple-3 { background: linear-gradient(45deg, #ff9800, #f57c00); }
+        .temple-4 { background: linear-gradient(45deg, #e91e63, #ad1457); }
+        .temple-5 { background: linear-gradient(45deg, #9c27b0, #7b1fa2); }
+        .temple-6 { background: linear-gradient(45deg, #673ab7, #512da8); }
+        .temple-7 { background: linear-gradient(45deg, #3f51b5, #303f9f); }
+        .temple-8 { background: linear-gradient(45deg, #2196f3, #1976d2); }
+        .temple-9 { background: linear-gradient(45deg, #00bcd4, #0097a7); }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .image-overlay {
+            background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+            font-size: 3.5rem;
+        }
+
+        .gallery-content {
+            padding: 2rem;
+        }
+
+        .gallery-content h3 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .gallery-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .temple-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #fff3e0;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .visit-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .visit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Spiritual Info Section */
+        .spiritual-info {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .spiritual-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .spiritual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .spiritual-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .spiritual-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .spiritual-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #aaa;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3d72;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spiritual-grid {
+                grid-template-columns: 1fr;
+            }
+        }

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Durdarshan Tourism - Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="gallary.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="gallery-header">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Our Photo Gallery</h2>
+                <p class="hero-description">
+                    Explore breathtaking destinations through our curated collection of photographs. 
+                    From majestic mountains to serene lakes, lush nature to rich cultural heritage - 
+                    discover the incredible diversity that awaits your journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+     <br><br>
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-header">
+                <i class="fas fa-filter"></i>
+                <span>Filter by Category</span>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-camera"></i>
+                    All
+                </button>
+                <button class="filter-btn" data-filter="temple">
+                    <i class="fas fa-mountain"></i>
+                    temple
+                    <span class="count">3</span>
+                </button>
+                <button class="filter-btn" data-filter="nature">
+                    <i class="fas fa-tree"></i>
+                    Nature
+                    <span class="count">3</span>
+                </button>
+                <button class="filter-btn" data-filter="Beach">
+                    <i class="fas fa-water"></i>
+                    Beach
+                    <span class="count">3</span>
+                </button>
+                <button class="filter-btn" data-filter="culture">
+                    <i class="fas fa-camera"></i>
+                    Culture
+                    <span class="count">3</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="loading-grid" id="loadingGrid" style="display: none;">
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+                <div class="loading-item"></div>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-camera"></i>
+                <h3>No images found</h3>
+                <p>Try selecting a different category</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-location" id="lightboxLocation"></p>
+                <div class="lightbox-category" id="lightboxCategory"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Ready to Explore?</h3>
+                <p>
+                    Let Sagar Durdarshan Tourism guide you through India's most spectacular destinations. 
+                    Contact us today to plan your unforgettable journey.
+                </p>
+                <div class="footer-copyright">
+                    © 2024 Sagar Durdarshan Tourism. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Gallery data
+          const galleryData = [
+       // temple
+    {
+        id: 1,
+        title: 'god of karishna',
+        category: 'temple',
+        image: 'https://utsav.gov.in/public/uploads/darshan_picture/darshan_4/1649075905366239894.jpg',
+        location: 'Dwarka'
+    },
+    {
+        id: 2,
+        title: 'somnath mahadev',
+        category: 'temple',
+        image: 'https://images.news18.com/ibnlive/uploads/2021/08/somnath-temple.jpg',
+        location: 'somnath'
+    },
+    {
+        id: 3,
+        title: 'mata no madh',
+        category: 'temple',
+        image: 'https://temple.yatradham.org/public/Product/temple/temple_4TQU4fzK_202506301725430.webp',
+        location: 'kutch'
+    },
+    
+    // Nature category
+    // {
+    //     id: 4,
+    //     title: 'waterfull',
+    //     category: 'nature',
+    //     image: 'https://vibrant.holiday/media_images/package/images/16914963490.jpg',
+    //     location: 'saputara'
+    // },
+    // {
+    //     id: 5,
+    //     title: 'madvi beach',
+    //     category: 'nature',
+    //     image: 'https://media.assettype.com/outlooktraveller%2F2025-04-22%2Fjx99e84o%2FMandvi-Beach.jpg?w=640&auto=format%2Ccompress',
+    //     location: 'Kerala'
+    // },
+    // {
+    //     id: 6,
+    //     title: 'somnath beach',
+    //     category: 'nature',
+    //     image: 'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/2299db82e5e209770089de7d25adef28_1000x1000.png',
+    //     location: 'somnath'
+    // },
+        {
+        id: 4,
+        title: 'rever',
+        category: 'nature',
+        image: 'https://cdn1.prayagsamagam.com/media/2023/05/24215035/haridwar-1.webp',
+        location: 'haridwar'
+    },
+    {
+        id: 5,
+        title: 'see',
+        category: 'nature',
+        image: 'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/455542bf5b64210ffde80b23e558b869_1000x1000.jpeg',
+        location: 'somnath'
+    },
+    {
+        id: 6,
+        title: 'narayan sarover',
+        category: 'nature',
+        image: 'https://www.kutchtourguide.com/blog/wp-content/uploads/2017/02/narayan-sarovar-kutch.jpg',
+        location: 'kutch'
+    },
+    
+    // Lakes category
+    // {
+    //     id: 7,
+    //     title: 'rever',
+    //     category: 'lakes',
+    //     image: 'https://cdn1.prayagsamagam.com/media/2023/05/24215035/haridwar-1.webp',
+    //     location: 'haridwar'
+    // },
+    // {
+    //     id: 8,
+    //     title: 'see',
+    //     category: 'lakes',
+    //     image: 'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/455542bf5b64210ffde80b23e558b869_1000x1000.jpeg',
+    //     location: 'somnath'
+    // },
+    // {
+    //     id: 9,
+    //     title: 'narayan sarover',
+    //     category: 'lakes',
+    //     image: 'https://www.kutchtourguide.com/blog/wp-content/uploads/2017/02/narayan-sarovar-kutch.jpg',
+    //     location: 'kutch'
+    // },
+    {
+        id: 7,
+        title: 'waterfull',
+        category: 'Beach',
+        image: 'https://vibrant.holiday/media_images/package/images/16914963490.jpg',
+        location: 'saputara'
+    },
+    {
+        id: 8,
+        title: 'madvi beach',
+        category: 'Beach',
+        image: 'https://media.assettype.com/outlooktraveller%2F2025-04-22%2Fjx99e84o%2FMandvi-Beach.jpg?w=640&auto=format%2Ccompress',
+        location: 'Kerala'
+    },
+    {
+        id: 9,
+        title: 'somnath beach',
+        category: 'Beach',
+        image: 'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/2299db82e5e209770089de7d25adef28_1000x1000.png',
+        location: 'somnath'
+    },
+    
+    // Culture category
+    {
+        id: 10,
+        title: 'Ganga',
+        category: 'culture',
+        image: 'https://s7ap1.scene7.com/is/image/incredibleindia/har-ki-pauri-haridwar-uttarakhand-1-attr-hero?qlt=82&ts=1726645951242',
+        location: 'haridwar'
+    },
+    {
+        id: 11,
+        title: 'Dance',
+        category: 'culture',
+        image: 'https://www.abirpothi.com/wp-content/uploads/2023/12/Rann-Utsav-Cultural-Dance-768x466.jpg',
+        location: 'kutch'
+    },
+    {
+        id: 12,
+        title: 'surapura dham',
+        category: 'culture',
+        image: 'https://content3.jdmagicbox.com/v2/comp/ahmedabad/m5/079pxx79.xx79.220129213422.m7m5/catalogue/shree-surapura-dham-bholad-ahmedabad-temples-cn7AufiwaN.jpg',
+        location: 'bholad'
+    }
+];
+
+// DOM elements
+     const filterButtons = document.querySelectorAll('.filter-btn');
+     const galleryGrid = document.getElementById('galleryGrid');    
+    const loadingGrid = document.getElementById('loadingGrid');
+    const noResults = document.getElementById('noResults');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxLocation = document.getElementById('lightboxLocation');
+    const lightboxCategory = document.getElementById('lightboxCategory');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+// State
+let currentFilter = 'all';
+let filteredItems = [...galleryData];
+
+// Initialize the gallery
+function init() {
+    renderGallery();
+    setupEventListeners();
+}
+
+// Setup event listeners
+function setupEventListeners() {
+    // Filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', handleFilterChange);
+    });
+
+    // Lightbox close
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+}
+
+// Handle filter change
+function handleFilterChange(e) {
+    const filter = e.currentTarget.dataset.filter;
+    
+    // Update active button
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.remove('temple', 'nature', 'Beach', 'culture', 'all');
+    });
+    
+    e.currentTarget.classList.add('active', filter);
+    
+    // Update current filter
+    currentFilter = filter;
+    
+    // Show loading
+    showLoading();
+    
+    // Filter items with delay for smooth transition
+    setTimeout(() => {
+        filterItems(filter);
+        renderGallery();
+        hideLoading();
+    }, 300);
+}
+
+// Filter items based on category
+function filterItems(filter) {
+    if (filter === 'all') {
+        filteredItems = [...galleryData];
+    } else {
+        filteredItems = galleryData.filter(item => item.category === filter);
+    }
+}
+
+// Show loading animation
+function showLoading() {
+    galleryGrid.style.display = 'none';
+    noResults.style.display = 'none';
+    loadingGrid.style.display = 'grid';
+}
+
+// Hide loading animation
+function hideLoading() {
+    loadingGrid.style.display = 'none';
+    
+    if (filteredItems.length === 0) {
+        noResults.style.display = 'block';
+    } else {
+        galleryGrid.style.display = 'grid';
+    }
+}
+
+// Render gallery items
+function renderGallery() {
+    galleryGrid.innerHTML = '';
+    
+    filteredItems.forEach((item, index) => {
+        const galleryItem = createGalleryItem(item, index);
+        galleryGrid.appendChild(galleryItem);
+    });
+}
+
+// Create individual gallery item
+function createGalleryItem(item, index) {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.style.animationDelay = `${index * 100}ms`;
+    
+    div.innerHTML = `
+        <img src="${item.image}" alt="${item.title}" loading="lazy">
+        <div class="gallery-overlay"></div>
+        <div class="category-badge ${item.category}">
+            ${item.category.charAt(0).toUpperCase() + item.category.slice(1)}
+        </div>
+        <div class="gallery-info">
+            <h3 class="gallery-title">${item.title}</h3>
+            <p class="gallery-location">${item.location}</p>
+        </div>
+    `;
+    
+    // Add click event for lightbox
+    div.addEventListener('click', () => openLightbox(item));
+    
+    return div;
+}
+
+// Open lightbox
+function openLightbox(item) {
+    lightboxImage.src = item.image;
+    lightboxImage.alt = item.title;
+    lightboxTitle.textContent = item.title;
+    lightboxLocation.textContent = item.location;
+    
+    lightboxCategory.textContent = item.category.charAt(0).toUpperCase() + item.category.slice(1);
+    lightboxCategory.className = `lightbox-category category-badge ${item.category}`;
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close lightbox
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Smooth scroll to top when filter changes
+function scrollToGallery() {
+    const gallerySection = document.querySelector('.gallery-section');
+    gallerySection.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Lazy loading for images
+function setupLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.remove('lazy');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+}
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

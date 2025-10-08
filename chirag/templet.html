@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Temples - Sagar Darshan Tourism</title>
+    <link rel="stylesheet" href="templet.css">
+</head>
+<body>
+    <header>
+        <!-- <nav class="container">
+            <div class="logo">🏛️ Sacred Temples</div>
+            <ul class="nav-links">
+                <li><a href="gallery.html">← Back to Gallery</a></li>
+                <li><a href="stay.html">Stay</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>🏛️ Sacred Temples</h1>
+            <p>Discover ancient temples and spiritual sanctuaries that showcase centuries of devotion</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-image temple-1" onclick="openModal('Somnath Temple', 'One of the 12 Jyotirlinga temples, rebuilt multiple times throughout history')">
+                    <div class="image-overlay">🕉️</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Somnath Temple</h3>
+                    <p>First among the twelve Jyotirlinga shrines of Shiva, this temple stands as a symbol of eternal faith and resilience.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Built</div>
+                            <div class="info-value">Ancient Era</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deity</div>
+                            <div class="info-value">Lord Shiva</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Style</div>
+                            <div class="info-value">Chalukya</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-2" onclick="openModal('Dwarka Temple', 'Sacred city of Lord Krishna with magnificent architecture')">
+                    <div class="image-overlay">🏛️</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Dwarka Temple</h3>
+                    <p>The legendary city of Lord Krishna, featuring stunning architecture and deep spiritual significance.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Built</div>
+                            <div class="info-value">2500 BCE</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deity</div>
+                            <div class="info-value">Lord Krishna</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Height</div>
+                            <div class="info-value">78 meters</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-3" onclick="openModal('Ambaji Temple', 'Shakti Peetha dedicated to Goddess Amba')">
+                    <div class="image-overlay">🌺</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Ambaji Temple</h3>
+                    <p>One of the 51 Shakti Peethas, this temple is dedicated to Goddess Amba and attracts millions of devotees.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Type</div>
+                            <div class="info-value">Shakti Peetha</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deity</div>
+                            <div class="info-value">Goddess Amba</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Visitors</div>
+                            <div class="info-value">30 Lakh/Year</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-4" onclick="openModal('Palitana Temples', 'Sacred Jain pilgrimage site with 863 temples')">
+                    <div class="image-overlay">⛩️</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Palitana Temples</h3>
+                    <p>The world's largest temple complex on Shatrunjaya hill with 863 magnificent Jain temples.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Temples</div>
+                            <div class="info-value">863</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Religion</div>
+                            <div class="info-value">Jainism</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Steps</div>
+                            <div class="info-value">3950</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-5" onclick="openModal('Akshardham Temple', 'Modern architectural marvel showcasing Indian culture')">
+                    <div class="image-overlay">🏰</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Akshardham Temple</h3>
+                    <p>A modern architectural masterpiece showcasing 10,000 years of Indian culture and spirituality.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Opened</div>
+                            <div class="info-value">2005</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Style</div>
+                            <div class="info-value">Modern</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Features</div>
+                            <div class="info-value">Cultural Complex</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-6" onclick="openModal('Rukmini Temple', 'Dedicated to Lord Krishna\\')">
+                    <div class="image-overlay">💐</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Rukmini Temple</h3>
+                    <p>Beautiful temple dedicated to Rukmini, the principal wife of Lord Krishna, known for its intricate carvings.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Era</div>
+                            <div class="info-value">12th Century</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deity</div>
+                            <div class="info-value">Rukmini Devi</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Art</div>
+                            <div class="info-value">Stone Carvings</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-7">
+                    <div class="image-overlay">🌊</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Bhadkeshwar Mahadev</h3>
+                    <p>Unique temple that gets surrounded by the Arabian Sea during high tide, creating a mystical experience.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">Seaside</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deity</div>
+                            <div class="info-value">Lord Shiva</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Special</div>
+                            <div class="info-value">Tidal Temple</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-8" onclick="openModal('Kirti Mandir', 'Memorial temple dedicated to Mahatma Gandhi\\')">
+                    <div class="image-overlay">🕊️</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Kirti Mandir</h3>
+                    <p>Memorial temple in Porbandar dedicated to Mahatma Gandhi's parents, showcasing Gandhian philosophy.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Built</div>
+                            <div class="info-value">1950</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Dedicated</div>
+                            <div class="info-value">Gandhi's Parents</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Theme</div>
+                            <div class="info-value">Peace</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-image temple-9" onclick="openModal('Shamlaji Temple', 'Ancient Vishnu temple with healing powers')">
+                    <div class="image-overlay">🙏</div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Shamlaji Temple</h3>
+                    <p>Ancient temple dedicated to Lord Vishnu, believed to have miraculous healing powers for devotees.</p>
+                    <div class="temple-info">
+                        <div class="info-item">
+                            <div class="info-label">Age</div>
+                            <div class="info-value">1000+ Years</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Deity</div>
+                            <div class="info-value">Lord Vishnu</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Known For</div>
+                            <div class="info-value">Healing</div>
+                        </div>
+                    </div>
+                    <a href="#" class="visit-btn" onclick="alert('Temple visit booking - Contact us for guided tours!')">Plan Visit</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="spiritual-info">
+            <div class="container">
+                <h2>Spiritual Experience</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Immerse yourself in the divine atmosphere of these sacred temples</p>
+                <div class="spiritual-grid">
+                    <div class="spiritual-item">
+                        <div class="spiritual-icon">🔔</div>
+                        <h4>Sacred Rituals</h4>
+                        <p>Witness ancient rituals and ceremonies that have been performed for centuries</p>
+                    </div>
+                    <div class="spiritual-item">
+                        <div class="spiritual-icon">🎵</div>
+                        <h4>Divine Music</h4>
+                        <p>Experience soul-stirring bhajans and devotional music during prayer times</p>
+                    </div>
+                    <div class="spiritual-item">
+                        <div class="spiritual-icon">🌅</div>
+                        <h4>Sunrise Prayers</h4>
+                        <p>Join morning aarti sessions for a peaceful start to your spiritual journey</p>
+                    </div>
+                    <div class="spiritual-item">
+                        <div class="spiritual-icon">📿</div>
+                        <h4>Meditation Spaces</h4>
+                        <p>Find quiet corners for personal meditation and inner reflection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="templeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sagar Darshan Tourism. All rights reserved. | Sacred Journeys</p>
+        </div>
+    </footer>
+    <script>
+        function openModal(title, description) {
+            const modal = document.getElementById('templeModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2 style="color: #d32f2f; margin-bottom: 1rem;">${title}</h2>
+                <div style="height: 300px; background: linear-gradient(45deg, #ff6b6b, #ee5a24); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin: 1rem 0;">🏛️ ${title}</div>
+                <p style="color: #666; font-size: 1.1rem; line-height: 1.6;">${description}</p>
+                <button class="visit-btn" style="margin-top: 1rem; width: auto; padding: 0.5rem 2rem;" onclick="alert('Temple visit booking! Contact us for spiritual tours and darshan arrangements.')">Book Temple Visit</button>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('templeModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('templeModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>
